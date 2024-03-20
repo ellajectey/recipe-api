@@ -9,4 +9,4 @@ const recipeSchema = new Schema({
 
 });
 
-export default model('recipe', recipeSchema,'recipes');
+export const RecipeModel=model('recipe', recipeSchema,'recipes');
