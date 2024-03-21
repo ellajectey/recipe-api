@@ -11,17 +11,18 @@ dotenv.config();
 const app = express();
 
 // apply middlewares
-app.use(express.json);
+app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
 const port = process.env.PORT || 8080
 
-app.use(router);
-app.use('/recipes',router)
 
-// mongoose connection should be before the app listening
+// connection should be before app use
 await mongoose.connect(process.env.MONGO_URI);
+
+
+app.use('/recipes',router)
 
 
 app.listen(port, () =>{

@@ -5,12 +5,10 @@ const router = Router();
 
 
 // POST/recipes
-
-router.post('', addRecipe);
-
+router.post('/', addRecipe);
 
 // GET/recipes
-router.get('', getRecipes);
+router.get('/', getRecipes);
 
 // GET/recipe/:id
 router.get('/:id',getRecipe);
